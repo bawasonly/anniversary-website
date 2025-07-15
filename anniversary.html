@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love ❤️</title>
+    <style>
+        /* Your styling goes here (CSS) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fce4ec; /* Light pink background */
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Full screen height */
+            margin: 0;
+            color: #4a148c; /* Dark purple text */
+            text-align: center;
+            padding: 20px; /* Add some padding around */
+            box-sizing: border-box; /* Include padding in width/height */
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 500px; /* Max width for readability */
+            width: 100%; /* Take full width up to max-width */
+        }
+
+        h1 {
+            color: #880e4f; /* Deeper pink/red */
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        button {
+            background-color: #ff4081; /* Bright pink/red */
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 50px; /* Pill shape */
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth hover */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background-color: #e0005a; /* Darker on hover */
+        }
+
+        .message-text {
+            margin-top: 30px;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #d81b60; /* Even deeper pink */
+            min-height: 50px; /* Reserve space so layout doesn't jump */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>hey, my love!</h1>
+        <p>click the button for a special message just for you.</p>
+        <button id="messageButton">click for love!</button>
+        <p id="messageDisplay" class="message-text"></p>
+    </div>
+
+    <script>
+        // Your script goes here (JavaScript)
+        document.addEventListener('DOMContentLoaded', function() {
+            const messageButton = document.getElementById('messageButton');
+            const messageDisplay = document.getElementById('messageDisplay');
+
+            // *** IMPORTANT: CUSTOMIZE YOUR COMPLIMENTS HERE ***
+            // Make sure each compliment is inside single quotes (' ') and separated by a comma (,)
+            const compliments = [
+                'your kindness shines brightest.',
+                'you\'re so incredibly intelligent.',
+                'your strength truly inspires me.',
+                'your beautiful heart is pure.',
+                'you have endless patience.',
+                'you always truly listen.',
+                'your unique perspective priceless.',
+                'your positive energy is infectious.',
+                'our late-night talks were everything.',
+                'our inside jokes are hilarious.',
+                'we connect so effortlessly.',
+                'our conversations go so deep.',
+                'our comfortable silences matter.',
+                'you just totally get me.',
+                'you make me feel safe.',
+                'your messages thrill me.',
+                'you always lift me up.',
+                'our shared dreams are real.',
+                'your smile melts my heart.',
+                'your eyes sparkle beautifully.',
+                'your glow lights my world.',
+                'you look amazing always.',
+                'your expressions are so cute.',
+                'can\'t wait to meet you.',
+                'our first hug, soon.',
+                'holding your hand someday.',
+                'hearing your laugh in person.',
+                'dreaming of our future life.',
+                'growing old with you.',
+                'your spirit is so free.',
+                'your compassion knows no bounds.',
+                'you\'re simply captivating.',
+                'your advice always helps.',
+                'you inspire me daily.',
+                'you make me better.',
+                'you brighten every single day.',
+                'you make me feel seen.',
+                'you make me cherished.',
+                'time flies when we talk.',
+                'you fill my heart.',
+                'you bring me peace.',
+                'your thoughts are beautiful.',
+                'your wisdom is profound.',
+                'you are truly wonderful.',
+                'so thankful for you.',
+                'you\'re my biggest blessing.',
+                'you complete my world.',
+                'your trust means everything.',
+                'your faith inspires me.',
+                'you handle things gracefully.',
+                'your humble heart shines.',
+                'your sincerity is powerful.',
+                'your intuition is amazing.',
+                'your gentle spirit calms.',
+                'your resilient nature inspires.',
+                'you\'re incredibly open-minded.',
+                'your integrity is unwavering.',
+                'you\'re truly magnificent.',
+                'your passion is infectious.',
+                'you\'re fiercely dedicated.',
+                'your curiosity is captivating.',
+                'your elegant style perfect.',
+                'your delightful quirks charming.',
+                'your thoughtful gestures touch me.',
+                'your handwriting is lovely.',
+                'you\'re so organized and clever.',
+                'your creative flair impresses.',
+                'your presence is comforting.',
+                'our plans excite me.',
+                'every memory is precious.',
+                'you are simply everything.',
+                'love your quick wit.',
+                'love your warm embrace (future).',
+                'love your infectious optimism.',
+                'love your adorable habits.',
+                'love your radiant beauty.',
+                'love your beautiful soul.',
+                'love your pure intentions.',
+                'love your gentle nature.',
+                'love your charming smile.',
+                'love your quiet grace.',
+                'love your joyful spirit.',
+                'love your inspiring courage.',
+                'love your deep understanding.',
+                'love your calming presence.',
+                'love your endless support.',
+                'love your comforting words.',
+                'love your kind heart.',
+                'love your amazing mind.',
+                'love your beautiful eyes.',
+                'love your beautiful face.',
+                'love your whole self.',
+                'love you completely, my girl.',
+                'always and forever, my love.'
+            ];
+
+            let lastIndex = -1; // To avoid repeating the immediate last compliment
+
+            messageButton.addEventListener('click', function() {
+                let randomIndex;
+                do {
+                    randomIndex = Math.floor(Math.random() * compliments.length);
+                } while (randomIndex === lastIndex && compliments.length > 1);
+
+                lastIndex = randomIndex;
+                messageDisplay.textContent = compliments[randomIndex];
+            });
+        });
+    </script>
+</body>
+</html>
